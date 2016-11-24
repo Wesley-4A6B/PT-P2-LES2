@@ -12,7 +12,6 @@
 			}
 			
 			#toon{
-				background-color: green;
 				margin-top: 40px;
 				margin-left: auto;
 				margin-right: auto;
@@ -24,7 +23,18 @@
 		<div id="blok">
 		Breedte: <input type="number" id="breedte" placeholder="250" > pixels <br>
 		Hoogte: <input type="number" id="hoogte" placeholder="150" > pixels <br>
-		<button onclick="myFunction()">Toon</button> <br><br> 
+		<select id="select" onclick="myFunction()">
+		  <option value="red">Rood</option>
+		  <option value="green">Groen</option>
+		  <option value="yellow">Geel</option>
+		  <option value="blue">Blauw</option>
+		  <option value="grey">Grijs</option>
+		  <option value="black">Zwart</option>
+		  <option value="purple">Paars</option>
+		  <option value="pink">Roze</option>
+		</select> <br>
+		
+		
 			
 		<div id="toon"></div>
 			
@@ -33,12 +43,14 @@
         <script>
             
 			function myFunction(){
+				var select = document.getElementById("select").value;
 				var breedte = document.getElementById("breedte").value;
 				var hoogte =  document.getElementById("hoogte").value;
 				var toon = breedte * hoogte;
+				
 				document.getElementById("toon").style.width = toon + "px";
 				document.getElementById("toon").style.height = toon + "px";
-				
+				document.getElementById("toon").style.backgroundColor = select;
 				
 			}
             
